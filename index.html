@@ -1,266 +1,610 @@
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odido.Breach</title>
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 
-<div class="cy-root">
-  <nav class="cy-nav">
-    <div class="cy-logo">// ODIDO.BREACH</div>
-    <div class="cy-nav-links">
-      <button class="cy-nav-btn active" onclick="showSection('samenvatting')">Samenvatting</button>
-      <button class="cy-nav-btn" onclick="showSection('tijdlijn')">Tijdlijn</button>
-      <button class="cy-nav-btn" onclick="showSection('handelingen')">Handelingsperspectieven</button>
-    </div>
-    <div style="font-family:'Share Tech Mono',monospace;font-size:10px;color:#2a4a5a;letter-spacing:1px;" id="cy-clock"></div>
-  </nav>
-
-  <!-- SAMENVATTING -->
-  <section class="cy-section active" id="samenvatting">
-    <div class="cy-scan-line" id="scan-text">INITIALISEREN... SYSTEEM ACTIEF</div>
-    <div class="cy-section-label">// Analyse — 2026</div>
-    <h1 class="cy-title">Het <span>Odido</span><br>Datalek</h1>
-    <p class="cy-subtitle">Begin 2026 werd Odido getroffen door een kritiek beveiligingslek in een legacy API-gateway. Een IDOR-kwetsbaarheid gaf onbevoegden toegang tot persoonlijke gegevens van miljoenen klanten.</p>
-
-    <div class="cy-stat-grid">
-      <div class="cy-stat">
-        <div class="cy-stat-num" id="counter1">0</div>
-        <div class="cy-stat-label">Gedupeerde klanten</div>
+<body>
+  <div class="cy-root">
+    <nav class="cy-nav">
+      <div class="cy-logo">// ODIDO.BREACH</div>
+      <div class="cy-nav-links">
+        <button class="cy-nav-btn active" onclick="showSection('samenvatting')">
+          Samenvatting
+        </button>
+        <button class="cy-nav-btn" onclick="showSection('tijdlijn')">
+          Tijdlijn
+        </button>
+        <button class="cy-nav-btn" onclick="showSection('handelingen')">
+          Handelingsperspectieven
+        </button>
       </div>
-      <div class="cy-stat">
-        <div class="cy-stat-num" id="counter2">0</div>
-        <div class="cy-stat-label">Uur tot containment</div>
+      <div
+        style="
+          font-family: &quot;Share Tech Mono&quot;, monospace;
+          font-size: 10px;
+          color: #2a4a5a;
+          letter-spacing: 1px;
+        "
+        id="cy-clock"
+      ></div>
+    </nav>
+
+    <!-- SAMENVATTING -->
+    <section class="cy-section active" id="samenvatting">
+      <div class="cy-scan-line" id="scan-text">
+        INITIALISEREN... SYSTEEM ACTIEF
       </div>
-      <div class="cy-stat">
-        <div class="cy-stat-num">IDOR</div>
-        <div class="cy-stat-label">Kwetsbaarheidstype</div>
+      <div class="cy-section-label">// Analyse — 2026</div>
+      <h1 class="cy-title">Het <span>Odido</span><br />Datalek</h1>
+      <p class="cy-subtitle">
+        Begin 2026 werd Odido getroffen door een kritiek beveiligingslek in een
+        legacy API-gateway. Een IDOR-kwetsbaarheid gaf onbevoegden toegang tot
+        persoonlijke gegevens van miljoenen klanten.
+      </p>
+
+      <div class="cy-stat-grid">
+        <div class="cy-stat">
+          <div class="cy-stat-num" id="counter1">0</div>
+          <div class="cy-stat-label">Gedupeerde klanten</div>
+        </div>
+        <div class="cy-stat">
+          <div class="cy-stat-num" id="counter2">0</div>
+          <div class="cy-stat-label">Uur tot containment</div>
+        </div>
+        <div class="cy-stat">
+          <div class="cy-stat-num">IDOR</div>
+          <div class="cy-stat-label">Kwetsbaarheidstype</div>
+        </div>
       </div>
-    </div>
 
-    <div class="cy-divider"></div>
+      <div class="cy-divider"></div>
 
-    <div class="cy-card">
-      <div class="cy-card-tag">// Context</div>
-      <h3>Waarom dit kon gebeuren</h3>
-      <p>De telecomsector stond onder enorme druk om 6G-ready te zijn. Versnelde migratie zorgde ervoor dat legacy systemen onvoldoende werden gemonitord. Een extern beveiligingsonderzoeker — niet het interne team — ontdekte de kwetsbaarheid. Dit is een klassiek conflict tussen Time-to-Market en Security-by-Design.</p>
-    </div>
-
-    <div class="cy-card">
-      <div class="cy-card-tag">// Menselijk gedrag</div>
-      <h3>Drie gedragspatronen onder druk</h3>
-      <p><strong style="color:#c8dde8;">Cognitive freeze (IT-team):</strong> Informatieoverbelasting leidde tot tijdelijke verlamming en alarm fatigue — medewerkers konden niet prioriteren.<br><br>
-      <strong style="color:#c8dde8;">Hypervigilantie (klanten):</strong> Gebrek aan communicatie creëerde een informatievacuüm dat op sociale media werd gevuld met geruchten en collectieve boosheid.<br><br>
-      <strong style="color:#c8dde8;">Stressgedreven besluitvorming (management):</strong> Verhoogd cortisol versmalde het blikveld tot juridische afdekking, ten koste van empathische communicatie.</p>
-    </div>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
       <div class="cy-card">
-        <div class="cy-card-tag">// Model 1</div>
-        <h3>Pearson & Mitroff</h3>
-        <p>5-fasenmodel: Odido faalde het meest bij Signal Detection — de inbreuk werd extern gemeld, niet intern ontdekt.</p>
+        <div class="cy-card-tag">// Context</div>
+        <h3>Waarom dit kon gebeuren</h3>
+        <p>
+          De telecomsector stond onder enorme druk om 6G-ready te zijn.
+          Versnelde migratie zorgde ervoor dat legacy systemen onvoldoende
+          werden gemonitord. Een extern beveiligingsonderzoeker — niet het
+          interne team — ontdekte de kwetsbaarheid. Dit is een klassiek conflict
+          tussen Time-to-Market en Security-by-Design.
+        </p>
       </div>
+
       <div class="cy-card">
-        <div class="cy-card-tag">// Model 2</div>
-        <h3>Rosenthal</h3>
-        <p>Sluipende crisis die explosief werd. Maandenlang aanwezig, maar publicatie veroorzaakte acute bedreiging.</p>
+        <div class="cy-card-tag">// Menselijk gedrag</div>
+        <h3>Drie gedragspatronen onder druk</h3>
+        <p>
+          <strong style="color: #c8dde8">Cognitive freeze (IT-team):</strong>
+          Informatieoverbelasting leidde tot tijdelijke verlamming en alarm
+          fatigue — medewerkers konden niet prioriteren.<br /><br />
+          <strong style="color: #c8dde8">Hypervigilantie (klanten):</strong>
+          Gebrek aan communicatie creëerde een informatievacuüm dat op sociale
+          media werd gevuld met geruchten en collectieve boosheid.<br /><br />
+          <strong style="color: #c8dde8"
+            >Stressgedreven besluitvorming (management):</strong
+          >
+          Verhoogd cortisol versmalde het blikveld tot juridische afdekking, ten
+          koste van empathische communicatie.
+        </p>
       </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px">
+        <div class="cy-card">
+          <div class="cy-card-tag">// Model 1</div>
+          <h3>Pearson & Mitroff</h3>
+          <p>
+            5-fasenmodel: Odido faalde het meest bij Signal Detection — de
+            inbreuk werd extern gemeld, niet intern ontdekt.
+          </p>
+        </div>
+        <div class="cy-card">
+          <div class="cy-card-tag">// Model 2</div>
+          <h3>Rosenthal</h3>
+          <p>
+            Sluipende crisis die explosief werd. Maandenlang aanwezig, maar
+            publicatie veroorzaakte acute bedreiging.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIJDLIJN -->
+    <section class="cy-section" id="tijdlijn">
+      <div class="cy-section-label">// Chronologie van het incident</div>
+      <h1 class="cy-title">Interactieve <span>Tijdlijn</span></h1>
+      <p class="cy-subtitle">
+        Klik op een fase om de details te bekijken. Elke stap onthult wat er
+        technisch en menselijk speelde.
+      </p>
+
+      <div class="cy-timeline">
+        <div class="cy-tl-item" onclick="toggleTl(this)">
+          <div class="cy-tl-dot"></div>
+          <div class="cy-tl-header">
+            <div class="cy-tl-time">Maanden eerder</div>
+            <div class="cy-tl-title">
+              IDOR-kwetsbaarheid ontstaat in legacy API
+            </div>
+            <div class="cy-tl-badge badge-warn">Sluipend</div>
+          </div>
+          <div class="cy-tl-body">
+            Tijdens de versnelde migratie naar 6G-ready infrastructuur wordt een
+            legacy API-gateway onvoldoende beveiligd. Een Insecure Direct Object
+            Reference (IDOR) kwetsbaarheid sluipt het systeem in:
+            objectreferenties zijn direct opvraagbaar zonder
+            autorisatiecontrole. Niemand merkt het. Er zijn geen audits op de
+            verouderde systemen gepland. Dit is de fase die Pearson & Mitroff
+            omschrijven als Signal Detection — en waar Odido volledig faalt.
+          </div>
+        </div>
+
+        <div class="cy-tl-item" onclick="toggleTl(this)">
+          <div class="cy-tl-dot"></div>
+          <div class="cy-tl-header">
+            <div class="cy-tl-time">T-0</div>
+            <div class="cy-tl-title">
+              Externe onderzoeker ontdekt en meldt het lek
+            </div>
+            <div class="cy-tl-badge badge-crit">Kritiek</div>
+          </div>
+          <div class="cy-tl-body">
+            Een externe beveiligingsonderzoeker — niet het interne team —
+            ontdekt de kwetsbaarheid en meldt deze aan Odido. Op dit moment
+            worden 4,2 miljoen klantprofielen blootgesteld: namen, adressen,
+            telefoonnummers en contractgegevens zijn bereikbaar geweest voor
+            onbevoegden. De Autoriteit Persoonsgegevens wordt op grond van de
+            AVG ingelicht.
+          </div>
+        </div>
+
+        <div class="cy-tl-item" onclick="toggleTl(this)">
+          <div class="cy-tl-dot"></div>
+          <div class="cy-tl-header">
+            <div class="cy-tl-time">T+0 tot T+6u</div>
+            <div class="cy-tl-title">
+              Cognitive freeze bij het IT-responsteam
+            </div>
+            <div class="cy-tl-badge badge-crit">Menselijk</div>
+          </div>
+          <div class="cy-tl-body">
+            De eerste uren worden gekenmerkt door alarm fatigue: een stortvloed
+            aan beveiligingsalerts overweldigt het team. Alarm fatigue treedt op
+            wanneer herhaaldelijke meldingen de gevoeligheid voor urgente
+            signalen afstompen. Gecombineerd met de enorme omvang van het
+            incident leidt dit tot cognitive freeze: het executieve functioneren
+            schiet tekort door informatieoverbelasting. Er worden geen heldere
+            prioriteiten gesteld.
+          </div>
+        </div>
+
+        <div class="cy-tl-item" onclick="toggleTl(this)">
+          <div class="cy-tl-dot"></div>
+          <div class="cy-tl-header">
+            <div class="cy-tl-time">T+6 tot T+24u</div>
+            <div class="cy-tl-title">
+              Management kiest voor juridische afdekking
+            </div>
+            <div class="cy-tl-badge badge-warn">Bestuurlijk</div>
+          </div>
+          <div class="cy-tl-body">
+            Onder extreme stressomstandigheden versmalt het blikveld van de
+            directie. Verhoogd cortisol beïnvloedt de prefrontale cortex en
+            stuurt de besluitvorming richting beheersing van aansprakelijkheid.
+            Er wordt geen proactieve communicatie richting klanten opgestart.
+            Dit laat een informatievacuüm ontstaan dat op sociale media wordt
+            gevuld met geruchten.
+          </div>
+        </div>
+
+        <div class="cy-tl-item" onclick="toggleTl(this)">
+          <div class="cy-tl-dot"></div>
+          <div class="cy-tl-header">
+            <div class="cy-tl-time">T+24u tot T+48u</div>
+            <div class="cy-tl-title">
+              API offline — damage containment gestart
+            </div>
+            <div class="cy-tl-badge badge-info">Technisch</div>
+          </div>
+          <div class="cy-tl-body">
+            De kwetsbare API-gateway wordt offline gehaald. Dit is de Damage
+            Containment-fase in het model van Pearson & Mitroff: de bloeding
+            wordt gestopt. Klanten worden pas nu formeel geïnformeerd, maar de
+            communicatie is defensief en beperkt. Sociale media staan inmiddels
+            in brand: hypervigilantie en emotionele besmetting hebben al voor
+            collectieve boosheid gezorgd.
+          </div>
+        </div>
+
+        <div class="cy-tl-item" onclick="toggleTl(this)">
+          <div class="cy-tl-dot"></div>
+          <div class="cy-tl-header">
+            <div class="cy-tl-time">Weken later</div>
+            <div class="cy-tl-title">
+              Recovery & Learning — de organisatie evalueert
+            </div>
+            <div class="cy-tl-badge badge-ok">Herstel</div>
+          </div>
+          <div class="cy-tl-body">
+            Odido bevindt zich nu in de Recovery- en Learning-fase. Systemen
+            worden hersteld, klantvertrouwen moet worden hergebouwd en
+            structurele lessen moeten worden doorgevoerd. Dit is precies de fase
+            waarvoor de drie handelingsperspectieven zijn ontworpen: technisch,
+            psychologisch en communicatief ingrijpen om herhaling te voorkomen.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HANDELINGSPERSPECTIEVEN -->
+    <section class="cy-section" id="handelingen">
+      <div class="cy-section-label">// Strategische respons</div>
+      <h1 class="cy-title">Drie <span>Handelings</span>perspectieven</h1>
+      <p class="cy-subtitle">
+        Concrete, theoretisch onderbouwde acties om de veerkracht van de
+        organisatie structureel te versterken.
+      </p>
+
+      <div class="cy-hp-tabs">
+        <button class="cy-hp-tab active" onclick="showHp(0, this)">
+          01 — Technisch
+        </button>
+        <button class="cy-hp-tab" onclick="showHp(1, this)">
+          02 — Psychologisch
+        </button>
+        <button class="cy-hp-tab" onclick="showHp(2, this)">
+          03 — Communicatief
+        </button>
+      </div>
+
+      <div class="cy-hp-panel active" id="hp0">
+        <div class="cy-hp-card">
+          <div class="cy-hp-icon">Perspectief 01</div>
+          <div class="cy-theory-tag">
+            Hollnagel — Resilience Engineering (2011)
+          </div>
+          <h3>Resilience-by-Design via Circuit Breakers</h3>
+          <p class="aanbev">
+            Implementeer automatische circuit breakers die ongebruikelijke
+            datastromen detecteren en de betrokken dienst isoleren voordat een
+            mens actie onderneemt.
+          </p>
+          <div class="cy-progress-bar">
+            <div class="cy-progress-fill" style="width: 85%"></div>
+          </div>
+          <p class="theorie">
+            Hollnagel betoogt dat veerkrachtige systemen niet alleen op
+            preventie zijn gericht, maar ook op graceful degradation: het
+            vermogen om gecontroleerd te falen. Concreet: Rate Limiting op
+            legacy API-gateways gecombineerd met anomaly detection die
+            automatisch een endpoint sluit bij afwijkend gedrag. Dit is geen
+            vervanging van preventie, maar een aanvulling die schade beperkt
+            wanneer preventie faalt.
+          </p>
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 8px;
+          "
+        >
+          <div
+            style="
+              padding: 14px;
+              border: 1px solid rgba(0, 255, 180, 0.12);
+              background: rgba(0, 255, 180, 0.03);
+            "
+          >
+            <div
+              style="
+                font-family: &quot;Share Tech Mono&quot;, monospace;
+                font-size: 9px;
+                color: #00ffb4;
+                letter-spacing: 1px;
+                margin-bottom: 6px;
+              "
+            >
+              STAP 1
+            </div>
+            <div style="font-size: 13px; color: #8aabb8">
+              Rate Limiting instellen op alle API-gateways
+            </div>
+          </div>
+          <div
+            style="
+              padding: 14px;
+              border: 1px solid rgba(0, 255, 180, 0.12);
+              background: rgba(0, 255, 180, 0.03);
+            "
+          >
+            <div
+              style="
+                font-family: &quot;Share Tech Mono&quot;, monospace;
+                font-size: 9px;
+                color: #00ffb4;
+                letter-spacing: 1px;
+                margin-bottom: 6px;
+              "
+            >
+              STAP 2
+            </div>
+            <div style="font-size: 13px; color: #8aabb8">
+              Anomaly detection koppelen aan automatische isolatie
+            </div>
+          </div>
+          <div
+            style="
+              padding: 14px;
+              border: 1px solid rgba(0, 255, 180, 0.12);
+              background: rgba(0, 255, 180, 0.03);
+            "
+          >
+            <div
+              style="
+                font-family: &quot;Share Tech Mono&quot;, monospace;
+                font-size: 9px;
+                color: #00ffb4;
+                letter-spacing: 1px;
+                margin-bottom: 6px;
+              "
+            >
+              STAP 3
+            </div>
+            <div style="font-size: 13px; color: #8aabb8">
+              Kwartaallijks legacy-audit inplannen
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cy-hp-panel" id="hp1">
+        <div class="cy-hp-card">
+          <div class="cy-hp-icon">Perspectief 02</div>
+          <div class="cy-theory-tag">
+            Klein — Recognition-Primed Decision (1999)
+          </div>
+          <h3>Training in Crisis Decision-Making</h3>
+          <p class="aanbev">
+            Investeer in structurele training van IT-sleutelfiguren in
+            besluitvorming onder cognitieve druk, via gesimuleerde
+            crisissituaties en red team oefeningen.
+          </p>
+          <div class="cy-progress-bar">
+            <div class="cy-progress-fill" style="width: 72%"></div>
+          </div>
+          <p class="theorie">
+            Klein beschrijft hoe experts in tijdskritische situaties niet alle
+            opties rationeel afwegen, maar patronen herkennen op basis van
+            eerdere ervaringen. Dit patroonherkenningsmechanisme (RPD)
+            ontwikkelt zich alleen door blootstelling aan realistische
+            oefensituaties. Een medewerker zonder crisiservaring zal eerder
+            bevriezen dan een geconditioneerde collega. Concreet: kwartaallijkse
+            tabletop exercises voor het SOC, met nadruk op snel identificeren
+            van het incidenttype en escaleren zonder volledig
+            informatieoverzicht.
+          </p>
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 8px;
+          "
+        >
+          <div
+            style="
+              padding: 14px;
+              border: 1px solid rgba(0, 212, 255, 0.12);
+              background: rgba(0, 212, 255, 0.03);
+            "
+          >
+            <div
+              style="
+                font-family: &quot;Share Tech Mono&quot;, monospace;
+                font-size: 9px;
+                color: #00d4ff;
+                letter-spacing: 1px;
+                margin-bottom: 6px;
+              "
+            >
+              KWARTAAL
+            </div>
+            <div style="font-size: 13px; color: #8aabb8">
+              Tabletop exercises voor het SOC-team
+            </div>
+          </div>
+          <div
+            style="
+              padding: 14px;
+              border: 1px solid rgba(0, 212, 255, 0.12);
+              background: rgba(0, 212, 255, 0.03);
+            "
+          >
+            <div
+              style="
+                font-family: &quot;Share Tech Mono&quot;, monospace;
+                font-size: 9px;
+                color: #00d4ff;
+                letter-spacing: 1px;
+                margin-bottom: 6px;
+              "
+            >
+              METHODE
+            </div>
+            <div style="font-size: 13px; color: #8aabb8">
+              Red team oefeningen met realistische cyberscenario's
+            </div>
+          </div>
+          <div
+            style="
+              padding: 14px;
+              border: 1px solid rgba(0, 212, 255, 0.12);
+              background: rgba(0, 212, 255, 0.03);
+            "
+          >
+            <div
+              style="
+                font-family: &quot;Share Tech Mono&quot;, monospace;
+                font-size: 9px;
+                color: #00d4ff;
+                letter-spacing: 1px;
+                margin-bottom: 6px;
+              "
+            >
+              DOEL
+            </div>
+            <div style="font-size: 13px; color: #8aabb8">
+              Patroonherkenning trainen onder tijdsdruk
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cy-hp-panel" id="hp2">
+        <div class="cy-hp-card">
+          <div class="cy-hp-icon">Perspectief 03</div>
+          <div class="cy-theory-tag">
+            Rotter — Locus of Control (1966) & Zanders (2022)
+          </div>
+          <h3>Radicale Transparantie en Herstelrecht</h3>
+          <p class="aanbev">
+            Communiceer binnen 24 uur proactief naar alle gedupeerden en bied
+            concrete hersteltools die de klant actieve controle teruggeven over
+            de eigen dataveiligheid.
+          </p>
+          <div class="cy-progress-bar">
+            <div class="cy-progress-fill" style="width: 60%"></div>
+          </div>
+          <p class="theorie">
+            Hypervigilantie en emotionele besmetting zijn direct te herleiden
+            tot gebrek aan perceived control. Wanneer klanten geen
+            handelingsmogelijkheden krijgen, neemt de ervaren dreiging toe. Door
+            concrete tools aan te bieden — tijdelijke blokkade van
+            kredietaanvragen, een persoonlijk datalekrapport, een speciaal
+            klantloket — verschuift de locus of control van extern naar intern.
+            Zanders (2022) benadrukt dat transparante crisiscommunicatie op de
+            lange termijn effectiever is voor reputatieherstel dan een
+            defensieve houding.
+          </p>
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 8px;
+          "
+        >
+          <div
+            style="
+              padding: 14px;
+              border: 1px solid rgba(255, 170, 0, 0.12);
+              background: rgba(255, 170, 0, 0.03);
+            "
+          >
+            <div
+              style="
+                font-family: &quot;Share Tech Mono&quot;, monospace;
+                font-size: 9px;
+                color: #ffaa00;
+                letter-spacing: 1px;
+                margin-bottom: 6px;
+              "
+            >
+              24 UUR
+            </div>
+            <div style="font-size: 13px; color: #8aabb8">
+              Proactieve melding aan alle gedupeerde klanten
+            </div>
+          </div>
+          <div
+            style="
+              padding: 14px;
+              border: 1px solid rgba(255, 170, 0, 0.12);
+              background: rgba(255, 170, 0, 0.03);
+            "
+          >
+            <div
+              style="
+                font-family: &quot;Share Tech Mono&quot;, monospace;
+                font-size: 9px;
+                color: #ffaa00;
+                letter-spacing: 1px;
+                margin-bottom: 6px;
+              "
+            >
+              ACTIE
+            </div>
+            <div style="font-size: 13px; color: #8aabb8">
+              Persoonlijk datalekrapport + kredietblokkade aanbieden
+            </div>
+          </div>
+          <div
+            style="
+              padding: 14px;
+              border: 1px solid rgba(255, 170, 0, 0.12);
+              background: rgba(255, 170, 0, 0.03);
+            "
+          >
+            <div
+              style="
+                font-family: &quot;Share Tech Mono&quot;, monospace;
+                font-size: 9px;
+                color: #ffaa00;
+                letter-spacing: 1px;
+                margin-bottom: 6px;
+              "
+            >
+              EFFECT
+            </div>
+            <div style="font-size: 13px; color: #8aabb8">
+              Locus of control terug bij de klant
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="cy-footer">
+      // ODIDO BREACH ANALYSE — JAN ROELOFS — LU2 — 2026 //
     </div>
-  </section>
-
-  <!-- TIJDLIJN -->
-  <section class="cy-section" id="tijdlijn">
-    <div class="cy-section-label">// Chronologie van het incident</div>
-    <h1 class="cy-title">Interactieve <span>Tijdlijn</span></h1>
-    <p class="cy-subtitle">Klik op een fase om de details te bekijken. Elke stap onthult wat er technisch en menselijk speelde.</p>
-
-    <div class="cy-timeline">
-
-      <div class="cy-tl-item" onclick="toggleTl(this)">
-        <div class="cy-tl-dot"></div>
-        <div class="cy-tl-header">
-          <div class="cy-tl-time">Maanden eerder</div>
-          <div class="cy-tl-title">IDOR-kwetsbaarheid ontstaat in legacy API</div>
-          <div class="cy-tl-badge badge-warn">Sluipend</div>
-        </div>
-        <div class="cy-tl-body">
-          Tijdens de versnelde migratie naar 6G-ready infrastructuur wordt een legacy API-gateway onvoldoende beveiligd. Een Insecure Direct Object Reference (IDOR) kwetsbaarheid sluipt het systeem in: objectreferenties zijn direct opvraagbaar zonder autorisatiecontrole. Niemand merkt het. Er zijn geen audits op de verouderde systemen gepland. Dit is de fase die Pearson & Mitroff omschrijven als Signal Detection — en waar Odido volledig faalt.
-        </div>
-      </div>
-
-      <div class="cy-tl-item" onclick="toggleTl(this)">
-        <div class="cy-tl-dot"></div>
-        <div class="cy-tl-header">
-          <div class="cy-tl-time">T-0</div>
-          <div class="cy-tl-title">Externe onderzoeker ontdekt en meldt het lek</div>
-          <div class="cy-tl-badge badge-crit">Kritiek</div>
-        </div>
-        <div class="cy-tl-body">
-          Een externe beveiligingsonderzoeker — niet het interne team — ontdekt de kwetsbaarheid en meldt deze aan Odido. Op dit moment worden 4,2 miljoen klantprofielen blootgesteld: namen, adressen, telefoonnummers en contractgegevens zijn bereikbaar geweest voor onbevoegden. De Autoriteit Persoonsgegevens wordt op grond van de AVG ingelicht.
-        </div>
-      </div>
-
-      <div class="cy-tl-item" onclick="toggleTl(this)">
-        <div class="cy-tl-dot"></div>
-        <div class="cy-tl-header">
-          <div class="cy-tl-time">T+0 tot T+6u</div>
-          <div class="cy-tl-title">Cognitive freeze bij het IT-responsteam</div>
-          <div class="cy-tl-badge badge-crit">Menselijk</div>
-        </div>
-        <div class="cy-tl-body">
-          De eerste uren worden gekenmerkt door alarm fatigue: een stortvloed aan beveiligingsalerts overweldigt het team. Alarm fatigue treedt op wanneer herhaaldelijke meldingen de gevoeligheid voor urgente signalen afstompen. Gecombineerd met de enorme omvang van het incident leidt dit tot cognitive freeze: het executieve functioneren schiet tekort door informatieoverbelasting. Er worden geen heldere prioriteiten gesteld.
-        </div>
-      </div>
-
-      <div class="cy-tl-item" onclick="toggleTl(this)">
-        <div class="cy-tl-dot"></div>
-        <div class="cy-tl-header">
-          <div class="cy-tl-time">T+6 tot T+24u</div>
-          <div class="cy-tl-title">Management kiest voor juridische afdekking</div>
-          <div class="cy-tl-badge badge-warn">Bestuurlijk</div>
-        </div>
-        <div class="cy-tl-body">
-          Onder extreme stressomstandigheden versmalt het blikveld van de directie. Verhoogd cortisol beïnvloedt de prefrontale cortex en stuurt de besluitvorming richting beheersing van aansprakelijkheid. Er wordt geen proactieve communicatie richting klanten opgestart. Dit laat een informatievacuüm ontstaan dat op sociale media wordt gevuld met geruchten.
-        </div>
-      </div>
-
-      <div class="cy-tl-item" onclick="toggleTl(this)">
-        <div class="cy-tl-dot"></div>
-        <div class="cy-tl-header">
-          <div class="cy-tl-time">T+24u tot T+48u</div>
-          <div class="cy-tl-title">API offline — damage containment gestart</div>
-          <div class="cy-tl-badge badge-info">Technisch</div>
-        </div>
-        <div class="cy-tl-body">
-          De kwetsbare API-gateway wordt offline gehaald. Dit is de Damage Containment-fase in het model van Pearson & Mitroff: de bloeding wordt gestopt. Klanten worden pas nu formeel geïnformeerd, maar de communicatie is defensief en beperkt. Sociale media staan inmiddels in brand: hypervigilantie en emotionele besmetting hebben al voor collectieve boosheid gezorgd.
-        </div>
-      </div>
-
-      <div class="cy-tl-item" onclick="toggleTl(this)">
-        <div class="cy-tl-dot"></div>
-        <div class="cy-tl-header">
-          <div class="cy-tl-time">Weken later</div>
-          <div class="cy-tl-title">Recovery & Learning — de organisatie evalueert</div>
-          <div class="cy-tl-badge badge-ok">Herstel</div>
-        </div>
-        <div class="cy-tl-body">
-          Odido bevindt zich nu in de Recovery- en Learning-fase. Systemen worden hersteld, klantvertrouwen moet worden hergebouwd en structurele lessen moeten worden doorgevoerd. Dit is precies de fase waarvoor de drie handelingsperspectieven zijn ontworpen: technisch, psychologisch en communicatief ingrijpen om herhaling te voorkomen.
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- HANDELINGSPERSPECTIEVEN -->
-  <section class="cy-section" id="handelingen">
-    <div class="cy-section-label">// Strategische respons</div>
-    <h1 class="cy-title">Drie <span>Handelings</span>perspectieven</h1>
-    <p class="cy-subtitle">Concrete, theoretisch onderbouwde acties om de veerkracht van de organisatie structureel te versterken.</p>
-
-    <div class="cy-hp-tabs">
-      <button class="cy-hp-tab active" onclick="showHp(0, this)">01 — Technisch</button>
-      <button class="cy-hp-tab" onclick="showHp(1, this)">02 — Psychologisch</button>
-      <button class="cy-hp-tab" onclick="showHp(2, this)">03 — Communicatief</button>
-    </div>
-
-    <div class="cy-hp-panel active" id="hp0">
-      <div class="cy-hp-card">
-        <div class="cy-hp-icon">Perspectief 01</div>
-        <div class="cy-theory-tag">Hollnagel — Resilience Engineering (2011)</div>
-        <h3>Resilience-by-Design via Circuit Breakers</h3>
-        <p class="aanbev">Implementeer automatische circuit breakers die ongebruikelijke datastromen detecteren en de betrokken dienst isoleren voordat een mens actie onderneemt.</p>
-        <div class="cy-progress-bar"><div class="cy-progress-fill" style="width:85%"></div></div>
-        <p class="theorie">Hollnagel betoogt dat veerkrachtige systemen niet alleen op preventie zijn gericht, maar ook op graceful degradation: het vermogen om gecontroleerd te falen. Concreet: Rate Limiting op legacy API-gateways gecombineerd met anomaly detection die automatisch een endpoint sluit bij afwijkend gedrag. Dit is geen vervanging van preventie, maar een aanvulling die schade beperkt wanneer preventie faalt.</p>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px;">
-        <div style="padding:14px;border:1px solid rgba(0,255,180,0.12);background:rgba(0,255,180,0.03);">
-          <div style="font-family:'Share Tech Mono',monospace;font-size:9px;color:#00ffb4;letter-spacing:1px;margin-bottom:6px;">STAP 1</div>
-          <div style="font-size:13px;color:#8aabb8;">Rate Limiting instellen op alle API-gateways</div>
-        </div>
-        <div style="padding:14px;border:1px solid rgba(0,255,180,0.12);background:rgba(0,255,180,0.03);">
-          <div style="font-family:'Share Tech Mono',monospace;font-size:9px;color:#00ffb4;letter-spacing:1px;margin-bottom:6px;">STAP 2</div>
-          <div style="font-size:13px;color:#8aabb8;">Anomaly detection koppelen aan automatische isolatie</div>
-        </div>
-        <div style="padding:14px;border:1px solid rgba(0,255,180,0.12);background:rgba(0,255,180,0.03);">
-          <div style="font-family:'Share Tech Mono',monospace;font-size:9px;color:#00ffb4;letter-spacing:1px;margin-bottom:6px;">STAP 3</div>
-          <div style="font-size:13px;color:#8aabb8;">Kwartaallijks legacy-audit inplannen</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="cy-hp-panel" id="hp1">
-      <div class="cy-hp-card">
-        <div class="cy-hp-icon">Perspectief 02</div>
-        <div class="cy-theory-tag">Klein — Recognition-Primed Decision (1999)</div>
-        <h3>Training in Crisis Decision-Making</h3>
-        <p class="aanbev">Investeer in structurele training van IT-sleutelfiguren in besluitvorming onder cognitieve druk, via gesimuleerde crisissituaties en red team oefeningen.</p>
-        <div class="cy-progress-bar"><div class="cy-progress-fill" style="width:72%"></div></div>
-        <p class="theorie">Klein beschrijft hoe experts in tijdskritische situaties niet alle opties rationeel afwegen, maar patronen herkennen op basis van eerdere ervaringen. Dit patroonherkenningsmechanisme (RPD) ontwikkelt zich alleen door blootstelling aan realistische oefensituaties. Een medewerker zonder crisiservaring zal eerder bevriezen dan een geconditioneerde collega. Concreet: kwartaallijkse tabletop exercises voor het SOC, met nadruk op snel identificeren van het incidenttype en escaleren zonder volledig informatieoverzicht.</p>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px;">
-        <div style="padding:14px;border:1px solid rgba(0,212,255,0.12);background:rgba(0,212,255,0.03);">
-          <div style="font-family:'Share Tech Mono',monospace;font-size:9px;color:#00d4ff;letter-spacing:1px;margin-bottom:6px;">KWARTAAL</div>
-          <div style="font-size:13px;color:#8aabb8;">Tabletop exercises voor het SOC-team</div>
-        </div>
-        <div style="padding:14px;border:1px solid rgba(0,212,255,0.12);background:rgba(0,212,255,0.03);">
-          <div style="font-family:'Share Tech Mono',monospace;font-size:9px;color:#00d4ff;letter-spacing:1px;margin-bottom:6px;">METHODE</div>
-          <div style="font-size:13px;color:#8aabb8;">Red team oefeningen met realistische cyberscenario's</div>
-        </div>
-        <div style="padding:14px;border:1px solid rgba(0,212,255,0.12);background:rgba(0,212,255,0.03);">
-          <div style="font-family:'Share Tech Mono',monospace;font-size:9px;color:#00d4ff;letter-spacing:1px;margin-bottom:6px;">DOEL</div>
-          <div style="font-size:13px;color:#8aabb8;">Patroonherkenning trainen onder tijdsdruk</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="cy-hp-panel" id="hp2">
-      <div class="cy-hp-card">
-        <div class="cy-hp-icon">Perspectief 03</div>
-        <div class="cy-theory-tag">Rotter — Locus of Control (1966) & Zanders (2022)</div>
-        <h3>Radicale Transparantie en Herstelrecht</h3>
-        <p class="aanbev">Communiceer binnen 24 uur proactief naar alle gedupeerden en bied concrete hersteltools die de klant actieve controle teruggeven over de eigen dataveiligheid.</p>
-        <div class="cy-progress-bar"><div class="cy-progress-fill" style="width:60%"></div></div>
-        <p class="theorie">Hypervigilantie en emotionele besmetting zijn direct te herleiden tot gebrek aan perceived control. Wanneer klanten geen handelingsmogelijkheden krijgen, neemt de ervaren dreiging toe. Door concrete tools aan te bieden — tijdelijke blokkade van kredietaanvragen, een persoonlijk datalekrapport, een speciaal klantloket — verschuift de locus of control van extern naar intern. Zanders (2022) benadrukt dat transparante crisiscommunicatie op de lange termijn effectiever is voor reputatieherstel dan een defensieve houding.</p>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px;">
-        <div style="padding:14px;border:1px solid rgba(255,170,0,0.12);background:rgba(255,170,0,0.03);">
-          <div style="font-family:'Share Tech Mono',monospace;font-size:9px;color:#ffaa00;letter-spacing:1px;margin-bottom:6px;">24 UUR</div>
-          <div style="font-size:13px;color:#8aabb8;">Proactieve melding aan alle gedupeerde klanten</div>
-        </div>
-        <div style="padding:14px;border:1px solid rgba(255,170,0,0.12);background:rgba(255,170,0,0.03);">
-          <div style="font-family:'Share Tech Mono',monospace;font-size:9px;color:#ffaa00;letter-spacing:1px;margin-bottom:6px;">ACTIE</div>
-          <div style="font-size:13px;color:#8aabb8;">Persoonlijk datalekrapport + kredietblokkade aanbieden</div>
-        </div>
-        <div style="padding:14px;border:1px solid rgba(255,170,0,0.12);background:rgba(255,170,0,0.03);">
-          <div style="font-family:'Share Tech Mono',monospace;font-size:9px;color:#ffaa00;letter-spacing:1px;margin-bottom:6px;">EFFECT</div>
-          <div style="font-size:13px;color:#8aabb8;">Locus of control terug bij de klant</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="cy-footer">// ODIDO BREACH ANALYSE — JAN ROELOFS — LU2 — 2026 //</div>
-</div>
+  </div>
+</body>
 
 <script>
   function showSection(id) {
-    document.querySelectorAll('.cy-section').forEach(s => s.classList.remove('active'));
-    document.querySelectorAll('.cy-nav-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-    event.target.classList.add('active');
+    document
+      .querySelectorAll(".cy-section")
+      .forEach((s) => s.classList.remove("active"));
+    document
+      .querySelectorAll(".cy-nav-btn")
+      .forEach((b) => b.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+    event.target.classList.add("active");
   }
 
   function toggleTl(el) {
-    const wasActive = el.classList.contains('active');
-    document.querySelectorAll('.cy-tl-item').forEach(i => i.classList.remove('active'));
-    if (!wasActive) el.classList.add('active');
+    const wasActive = el.classList.contains("active");
+    document
+      .querySelectorAll(".cy-tl-item")
+      .forEach((i) => i.classList.remove("active"));
+    if (!wasActive) el.classList.add("active");
   }
 
   function showHp(idx, btn) {
-    document.querySelectorAll('.cy-hp-panel').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.cy-hp-tab').forEach(b => b.classList.remove('active'));
-    document.getElementById('hp' + idx).classList.add('active');
-    btn.classList.add('active');
+    document
+      .querySelectorAll(".cy-hp-panel")
+      .forEach((p) => p.classList.remove("active"));
+    document
+      .querySelectorAll(".cy-hp-tab")
+      .forEach((b) => b.classList.remove("active"));
+    document.getElementById("hp" + idx).classList.add("active");
+    btn.classList.add("active");
   }
 
   function animateCounter(id, target, suffix) {
@@ -269,27 +613,33 @@
     const el = document.getElementById(id);
     const interval = setInterval(() => {
       current = Math.min(current + step, target);
-      el.textContent = current.toLocaleString('nl-NL') + (suffix || '');
+      el.textContent = current.toLocaleString("nl-NL") + (suffix || "");
       if (current >= target) clearInterval(interval);
     }, 25);
   }
 
-  animateCounter('counter1', 4200000, '');
-  animateCounter('counter2', 48, 'u');
+  animateCounter("counter1", 4200000, "");
+  animateCounter("counter2", 48, "u");
 
-  const scanTexts = ['SYSTEEM ACTIEF', 'ANALYSE GELADEN', 'DATA VERWERKT', 'RAPPORT KLAAR'];
+  const scanTexts = [
+    "SYSTEEM ACTIEF",
+    "ANALYSE GELADEN",
+    "DATA VERWERKT",
+    "RAPPORT KLAAR",
+  ];
   let scanIdx = 0;
   setInterval(() => {
     scanIdx = (scanIdx + 1) % scanTexts.length;
-    document.getElementById('scan-text').textContent = 'STATUS // ' + scanTexts[scanIdx];
+    document.getElementById("scan-text").textContent =
+      "STATUS // " + scanTexts[scanIdx];
   }, 3000);
 
   function updateClock() {
     const now = new Date();
-    const h = String(now.getHours()).padStart(2,'0');
-    const m = String(now.getMinutes()).padStart(2,'0');
-    const s = String(now.getSeconds()).padStart(2,'0');
-    document.getElementById('cy-clock').textContent = h + ':' + m + ':' + s;
+    const h = String(now.getHours()).padStart(2, "0");
+    const m = String(now.getMinutes()).padStart(2, "0");
+    const s = String(now.getSeconds()).padStart(2, "0");
+    document.getElementById("cy-clock").textContent = h + ":" + m + ":" + s;
   }
   setInterval(updateClock, 1000);
   updateClock();
